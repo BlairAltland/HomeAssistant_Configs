@@ -1,0 +1,24 @@
+
+yfhvhkgs_blair:
+  hide_if_away: false
+  mac:
+  name: [REDACTED]
+  picture:
+  track: true
+  vendor:
+
+phone_phone:
+  hide_if_away: false
+  mac:
+  name: phone
+  picture:
+  track: true
+  vendor:
+
+beacon_desk:
+  hide_if_away: false
+  mac:
+  name: desk
+  picture:
+  track: true
+  vendor:

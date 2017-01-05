@@ -1,0 +1,103 @@
+16-12-18 19:11:16 phue: GET Request to 192.168.3.2/api/9V5I1TMO1b6YaS6YcKJGInDroczDDtYmY8uVmLcf timed out.
+Traceback (most recent call last):
+  File "/Users/blair/.homeassistant/deps/phue.py", line 651, in request
+    connection.request(mode, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 711, in create_connection
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 702, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+16-12-18 19:11:16 homeassistant.components.light: Error while setting up platform hue
+Traceback (most recent call last):
+  File "/Users/blair/.homeassistant/deps/phue.py", line 651, in request
+    connection.request(mode, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 711, in create_connection
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socket.py", line 702, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/helpers/entity_component.py", line 150, in _async_setup_platform
+    entity_platform.add_entities, discovery_info
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/futures.py", line 361, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/tasks.py", line 296, in _wakeup
+    future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/futures.py", line 274, in result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/light/hue.py", line 108, in setup_platform
+    setup_bridge(host, hass, add_devices, filename, allow_unreachable)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/light/hue.py", line 194, in setup_bridge
+    update_lights()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/util/__init__.py", line 296, in wrapper
+    result = method(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/util/__init__.py", line 296, in wrapper
+    result = method(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/light/hue.py", line 146, in update_lights
+    api = bridge.get_api()
+  File "/Users/blair/.homeassistant/deps/phue.py", line 838, in get_api
+    return self.request('GET', '/api/' + self.username)
+  File "/Users/blair/.homeassistant/deps/phue.py", line 661, in request
+    raise PhueRequestTimeout(None, error)
+phue.PhueRequestTimeout: (None, 'GET Request to 192.168.3.2/api/9V5I1TMO1b6YaS6YcKJGInDroczDDtYmY8uVmLcf timed out.')
+16-12-18 19:11:20 homeassistant.core: Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/base_events.py", line 958, in create_server
+    sock.bind(sa)
+OSError: [Errno 48] Address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/http/__init__.py", line 153, in start_server
+    yield from server.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/http/__init__.py", line 309, in start
+    self._handler, self.server_host, self.server_port, ssl=context)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/base_events.py", line 962, in create_server
+    % (sa, err.strerror.lower()))
+OSError: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8123): address already in use
+16-12-18 19:11:46 netdisco.ssdp: Found malformed XML at http://10.0.0.38:7676/smp_6_: 
+16-12-18 19:11:48 homeassistant.components.light.hue: Connected to Hue at 10.0.0.4 but not registered.
+16-12-18 19:12:19 plexapi: http://10.26.2.4:32400: HTTPConnectionPool(host='10.26.2.4', port=32400): Max retries exceeded with url: /?X-Plex-Token=9usUyX4H3xXbUqwXzNRU (Caused by ConnectTimeoutError(<requests.packages.urllib3.connection.HTTPConnection object at 0x1077b1e80>, 'Connection to 10.26.2.4 timed out. (connect timeout=30)'))
+16-12-18 19:39:44 plexapi: http://10.26.2.4:32400: HTTPConnectionPool(host='10.26.2.4', port=32400): Max retries exceeded with url: /?X-Plex-Token=9usUyX4H3xXbUqwXzNRU (Caused by ConnectTimeoutError(<requests.packages.urllib3.connection.HTTPConnection object at 0x1078531d0>, 'Connection to 10.26.2.4 timed out. (connect timeout=30)'))
+16-12-18 20:11:17 homeassistant.components.updater: Got unexpected response: None
+16-12-18 20:52:43 homeassistant.core: Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/http/__init__.py", line 147, in stop_server
+    yield from server.stop()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/homeassistant/components/http/__init__.py", line 316, in stop
+    self.server.close()
+AttributeError: 'NoneType' object has no attribute 'close'

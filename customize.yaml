@@ -1,0 +1,77 @@
+#################################################################
+## Customization
+#################################################################
+
+ input_boolean.restart_hass:
+    friendly_name: Restart Home Assistant
+    initial: off
+    icon: mdi:refresh
+  
+ device_tracker.phone_phone:
+    icon: mdi:human-male
+    friendly_name: Blair
+ 
+#Switches
+
+ switch.monitor:
+    icon: mdi:desktop-mac
+    
+ switch.desk_backlight:
+    icon: mdi:power-plug
+    
+ switch.christmas_tree:
+    icon: mdi:pine-tree
+    
+ switch.minion:
+    icon: mdi:android
+  
+#Lights
+
+ light.desk_lamp:
+    icon: mdi:lamp
+
+ light.nightstand_lamp:
+    icon: mdi:lamp
+    
+ light.corner_lamp:
+    icon: mdi:lamp
+
+ light.detail_lamp:
+    icon: mdi:lamp
+
+ light.side_lamp:
+    icon: mdi:lamp
+
+
+#Sensors
+
+ sensor.speedtest_download:
+    friendly_name: Download
+    icon: mdi:speedometer
+    
+ sensor.speedtest_ping:
+    friendly_name: Ping
+    icon: mdi:speedometer   
+    
+ sensor.speedtest_upload:
+    friendly_name: Upload
+    icon: mdi:speedometer
+    
+ sensor.dark_sky_humidity:
+    friendly_name: Humidity
+    
+ sensor.dark_sky_precip_probability:
+    friendly_name: Precipitation Chance
+
+ sensor.dark_sky_pressure:
+    friendly_name: Pressure
+    
+ sensor.dark_sky_temperature:
+    friendly_name: Temperature
+    
+ sensor.dark_sky_wind_speed:
+    friendly_name: Wind Speed
+    
+ sensor.since_last_boot:
+    friendly_name: Uptime
+    

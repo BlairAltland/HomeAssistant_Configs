@@ -1,0 +1,144 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 40.499916
+  longitude: -78.01980
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 209.74
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+
+sun:
+
+http:
+  # Uncomment this to add a password (recommended!)
+   api_password: [REDACTED]   
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+light:
+  platform: hue
+  host: [REDACTED]
+
+wink:
+  access_token: [REDACTED]
+  
+  
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+mqtt:
+  broker: m12.cloudmqtt.com
+  port: 15709
+  client_id: home-assistant-1
+  keepalive: 60
+  username: ha
+  password: [REDACTED]
+  
+  
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 100
+    waypoints: True
+    waypoint_whitelist:
+      - jon
+      - ram
+    
+#################################################################
+## Sensors
+#################################################################
+sensor:
+  platform: speedtest
+  minute:
+      - 0
+      - 1
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+sensor 2:
+  - platform: darksky
+    api_key: [REDACTED]
+    monitored_conditions:
+      - icon
+      - precip_probability
+      - temperature
+      - wind_speed
+      - humidity
+      - pressure
+      
+sensor 3:
+  platform: cpuspeed
+  name: CPU 
+
+sensor 4:
+  platform: systemmonitor
+  resources:
+    - type: memory_free
+    - type: memory_use_percent
+    - type: processor_use
+    - type: since_last_boot
+    
+sensor 5:
+  - platform: transmission
+    host: 127.0.0.1
+    port: 9091
+    username: blair
+    password: [REDACTED]
+    monitored_variables:
+      - 'current_status'
+      - 'download_speed'
+      - 'upload_speed'
+
+input_boolean:
+  restart_hass:
+    initial: off
+    
+    
+  plex_lights_disable:
+    name: Disable Plex Lights
+    initial: off
+    icon: mdi:filmstrip-off
+
+zone:
+    - name: 'Desk'
+      latitude: [REDACTED]
+      longitude: [REDACTED]
+      radius: 0.3
+      passive: true
+      
+zone 2:
+  name: Home
+  latitude: [REDACTED]
+  longitude: [REDACTED]
+  radius: 17
+  icon: mdi:home
+
+#################################################################
+## Includes
+#################################################################
+
+group: !include groups.yaml
+
+automation: !include automation.yaml
+
+#input_boolean: !include input_boolean.yaml

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pubnubsub-handler
+Version: 0.0.5
+Summary: Handles the PubNub subscriptions between PubNub and Home-Assistant for Wink
+Home-page: https://github.com/w1ll1am23/pubnubsub-handler
+Author: William Scanlon
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

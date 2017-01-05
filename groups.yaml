@@ -1,0 +1,99 @@
+#################################################################
+## Groups
+#################################################################
+
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.family_room
+      - group.bedroom
+      - group.metrics
+      - group.weather
+      - group.automation
+      - group.household
+      #- group.transmisson
+      
+  bedroom:
+    name: Bedroom
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+      - light.mood_lamp
+      - light.desk_lamp
+      - light.nightstand_lamp
+      - light.corner_lamp
+      - switch.monitor
+      - switch.desk_backlight
+      
+  family room:
+    name: Family Room
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+      - light.detail_lamp
+      - light.side_lamp
+      - switch.christmas_tree
+      - switch.minion
+      - media_player.family_room
+      #- media_player.plex_web_safari
+      
+  family room lights:
+    name: Family Room Lights
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+      - light.detail_lamp
+      - light.side_lamp
+      
+  household:
+    name: Household
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+      - device_tracker.phone_phone
+    
+      
+      
+  metrics:
+    name: System Stats
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+      - sensor.cpu
+      - sensor.cpu_use
+      - sensor.ram_use
+      - sensor.ram_free
+      - sensor.since_last_boot
+      - updater.updater
+      - sensor.speedtest_ping    
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      
+  weather:
+    name: Weather
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+    - sensor.dark_sky_temperature    
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_pressure
+    
+  automation:
+    name: Automation
+    view: no
+    icon: mdi:lightbulb-outline
+    entities:
+    - input_boolean.restart_hass
+    - input_boolean.plex_lights_disable
+    
+  #transmission:
+    #name: Transmission
+    #view: no
+    #icon: mdi:lightbulb-outline
+    #entities:
+    #- sensor.transmission_status
+    #- sensor.transmission_down_speed
+    #- sensor.transmission_up_speed
